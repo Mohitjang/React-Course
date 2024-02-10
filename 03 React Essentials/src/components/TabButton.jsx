@@ -1,9 +1,11 @@
-export default function Examples({ children, onSelect }) {
+export default function Examples({ children, onSelect, isSelected }) {
   console.log("TabButton component executing");
 
   return (
     <li>
-      <button onClick={onSelect}>{children}</button>
+      <button className={isSelected ? "active" : undefined} onClick={onSelect}>
+        {children}
+      </button>
     </li>
   );
 }

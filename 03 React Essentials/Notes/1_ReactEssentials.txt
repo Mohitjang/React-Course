@@ -1,0 +1,22 @@
+1. Rendering content conditianally:- 
+    // using ternery operator:- {condition ? code if condition was true : code else condition was false}
+    // using AND operator:- {condition && code is condition is true}
+    // using if else statement:- im this we have write code inside the function before return!
+
+2. CSS styling and Dynamic styling:- 
+    // we can use css inline on the miltiple components like HTML :- id and so on...
+    // but class attribute we have to use className in jsx code.
+
+3. Outputting List Data Dynamically:-
+    // using map function:- 
+    =>  jsx is capable of dealing with arrays of renderable data or arrays of jsx code for example.
+        example:- 
+            {[<p>Hello</p>, <p>World</p>]}
+            {['Hello', 'World']}
+    =>  to make jsx compatible dealing with arrays of an object we have to transform objects to jsx elements:-
+        to do that we have to use built-in map function:- 
+        example:- array.map((arrayItem) =>(component + props))
+            {CORE_CONCEPTS.map((conceptItem)=>(<CoreConcepts {...conceptItem} />))}
+
+4. Always add a unique key prop to the list item.
+
