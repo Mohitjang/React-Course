@@ -1,0 +1,5 @@
+Beyond the basics:- 
+    1. Behind the scenes of JSX
+    2. Structuring Componenets and State
+    3. Advanced state usage
+    4. Pattern and best practices

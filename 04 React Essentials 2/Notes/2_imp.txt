@@ -1,0 +1,1 @@
+1. Fragments:- Fragments are nothing but tags which we can use for wrapping the jsx code and it will not inject this tag into html dom code.

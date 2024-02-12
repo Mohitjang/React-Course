@@ -19,4 +19,24 @@
             {CORE_CONCEPTS.map((conceptItem)=>(<CoreConcepts {...conceptItem} />))}
 
 4. Always add a unique key prop to the list item.
+5. from next section:- make small components from bigger components. because we dont want to render every component everytime.
 
+6. Make a wrapper component. and make it a flexible with any number of props using ...props.
+7. Forwording props to wrapped components. i.e. Section
+8. Forwording jsx code as a props to wrapper components. i.e. Tabs
+9. Forwording builtin tagname to the wrapper components using capital letter. i.e. <ButtonContainer>{buttons}</ButtonContainer>
+10. Setting default props value. 
+    example :-
+        export default function Tabs({ children, buttons , ButtonContainer= "menu"}) {
+            // const ButtonContainer = buttonContainer
+            return (
+                <>
+                <ButtonContainer>{buttons}</ButtonContainer>
+                {children}
+                </>
+            );
+            }
+
+
+The End of React Essentials 1.
+last of this Note is video 68.

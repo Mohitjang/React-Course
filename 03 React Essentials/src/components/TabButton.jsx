@@ -1,4 +1,4 @@
-export default function Examples({ children, onSelect, isSelected }) {
+export default function TabButton({ children, onSelect, isSelected }) {
   console.log("TabButton component executing");
 
   return (
