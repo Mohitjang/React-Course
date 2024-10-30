@@ -1,3 +1,6 @@
+The End of React Essentials 1.
+last of this Note is video 68.
+
 Beyond the basics:- 
     1. Behind the scenes of JSX
     2. Structuring Componenets and State

@@ -1,1 +1,13 @@
 1. Fragments:- Fragments are nothing but tags which we can use for wrapping the jsx code and it will not inject this tag into html dom code.
+2. Split Components between different Componenets to make our life easier.
+3. Wrapper Componenets.
+4. Forwarded props or proxy props to wrapped Elements using Rest property to group properties (...props) 
+    and use it as spread operator (...props)
+5. Forwarding props to the inner Componenets using spread operator.
+6. components container types setting dynamically, i.e div,menu,section etc.
+    for built in we can use Strings like "menu", "div", "ul" etc.
+    for custom components we can use components name simply like Section, Tabs etc.
+7. Setting default props. i.e. ButtonContainer = "menu"
+
+
+    

@@ -1,0 +1,18 @@
+Planing player name section:- 
+1. Add click listener on the edit button. ------done!
+2. when user is editing means edit button is clicked 
+    then show the input field instead of player name. -------done!
+    then show the save instead of edit. ------Done!
+3. when user is writing name in the input field.
+    then use two way binding to reflect user input in the input element using onChange listener. ------Done!
+4. when user click again the save button.
+    then show the edit button instead of save. -----Done!
+    then show the username instead of input field. -----Done!
+
+Planning Game board:-
+Done! 1. create game board component
+Done! 2. create initial game data
+Done! 3. create multi dimentional game board using map method
+4. add onClick listener on each game board list item
+5. pass the player symbol from player data to gameboard data using useState hook
+6. set active player element highlighted during his turn

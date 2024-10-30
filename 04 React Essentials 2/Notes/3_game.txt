@@ -1,0 +1,14 @@
+Tic-tac-toe game:- 
+
+1. not all content must go into components:-  like we can write html code inside the index.html file in traditional way as well.
+2. public/ vs asset/ for image storage
+3. components instances works in isolation.
+4. Update state using function form 
+    like setValue(editiong=> !editing) - this changes the state value instant
+    instead of setValue(!editing) - this schedule the changes of state which makes it slower.
+5. User input OR two-way binding
+6. Rendering multi-dimentional Lists
+7. Updating Object state immutably - by creating copy of original game data.
+8. Lifting state up.
+9. derive state from props
+10. sharing states Across components
