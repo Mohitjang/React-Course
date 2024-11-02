@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import ResultModal from "./ResultModal";
 
 // instead of using this timer variable out of the component body, we must have to use the useRef hook:-
 // problems with this approach:-
@@ -29,11 +30,13 @@ const TimerChallenge = ({ title, target }) => {
   const [timerStarted, setTimerStarted] = useState(false);
   const [timerExpired, setTimerExpired] = useState(false);
   const timer = useRef();
-
+  const dialog = useRef()
+  
   const handleStart = () => {
     setTimerStarted(true);
     timer.current = setTimeout(() => {
       setTimerExpired(true);
+      dialog.current.showModal()
     }, target * 1000);
   };
 
@@ -43,10 +46,11 @@ const TimerChallenge = ({ title, target }) => {
   };
 
   return (
+    <>
+    <ResultModal ref={dialog} result={"Lost"} targetTime={target} />
     <section className="challenge">
       <h2>{title}</h2>
-      <p>{timerExpired ? "You Lost!" : ""}</p>
-      <p>
+      <p className="challenge-time">
         {target} second{target > 1 && "s"}
       </p>
       <button onClick={timerStarted ? handleStop : handleStart}>
@@ -56,6 +60,7 @@ const TimerChallenge = ({ title, target }) => {
         {timerStarted ? "Timer is running..." : "Timer inactive"}
       </p>
     </section>
+    </>
   );
 };
 
