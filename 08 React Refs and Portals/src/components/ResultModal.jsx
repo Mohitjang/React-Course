@@ -1,4 +1,5 @@
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
+import TimerChallenge from "./TimerChallenge";
 
 // without open attribute/ using forward ref feature of react
 // when we use open prop inside the dialog element than the bg is not blurred
@@ -6,37 +7,40 @@ import React, { forwardRef, useImperativeHandle, useRef } from "react";
 // for that we need access of this component inside the timer challenge component
 // to make this possible we can use ref hook of react.
 
-// using useImparativeHandle to 
+// using useImparativeHandle to
 // define method for component to use from outside
 
+const ResultModal = forwardRef(({ targetTime, timeRemaining, onReset }, ref) => {
+  const dialogC = useRef();
+  const formattedTimeRemaining = (timeRemaining / 1000).toFixed(2);
+  const userLost = timeRemaining <= 0;
+  let score = Math.round((1 - timeRemaining / (targetTime * 1000)) * 100);
 
-const ResultModal = forwardRef(({result, targetTime }, ref) => {
+  useImperativeHandle(ref, () => {
+    return {
+      open() {
+        dialogC.current.showModal();
+      },
+    };
+  });
 
-    const dialogC = useRef();
-
-    useImperativeHandle(ref, () => {
-        return {
-            open(){
-                dialogC.current.showModal()
-            }
-        }
-
-    })
-
-
+  
   return (
-    <dialog className="result-modal" ref={dialogC}>
-      <h2>You {result} </h2>
+    <dialog className="result-modal" ref={dialogC} onClose={onReset}>
+      {userLost && <h2>You Lost</h2>}
+      {!userLost  && <h2>You Score: {score}</h2>}
+
       <p>
-        The Target Time was
+        The Target Time was 
         <strong>
-          {targetTime} second {targetTime > 1 ? "s" : ""}
+          {targetTime} second{targetTime > 1 ? "s" : ""}
         </strong>
       </p>
       <p>
-        You stopped the timer with <strong>X seconds left.</strong>
+        You stopped the timer with{" "}
+        <strong>{formattedTimeRemaining} seconds left.</strong>
       </p>
-      <form action="" method="dialog">
+      <form action="" method="dialog" onSubmit={onReset}>
         <button>Close</button>
       </form>
     </dialog>
